@@ -6,7 +6,7 @@
         height=100%;
       } src= {{parts['image']}} class="img-fluid rounded-start">
     </div>
-    <div class="col-md-8">
+    <div class="col-md-6">
       <div class="card-body">
         <h5 class="card-title mt-4 mb-5">{{parts['name']}}</h5>
         <h6 class="mb-5">
@@ -16,6 +16,10 @@
           <b>quantity: </b> {{parts["quant"]}}
         </h6>
       </div>
+      
+    </div>
+    <div class="col-md-2 d-flex justify-content-center align-items-center">
+      <a type="button" href="mailto:mishrashamit22@gmail.com?subject=To%20Buy%20{{ parts['name'] }}&body=Address%3A%20%3Cyour%20address%3E%0D%0A%0D%0AQuantity%3A%20%3Cneeded%20quantity%3E%20x%2F{{ parts['quant'] }}%0D%0A%0D%0A" class="btn btn-outline-primary">Buy</a>
     </div>
   </div>
 </div>

@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - E-Waste Management</title>
+    <link rel="stylesheet" href="about.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="icon" href="static/recycle.png">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <style>
+      /* Reset some default styles */
+      body,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Basic styles */
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        background-color: #002a54ef;
+        color: #fff;
+        padding: 25px 20px 25px 50px;
+        text-align: center;
+        position: relative;
+      }
+
+      header h1 {
+        text-shadow: 5px 3px 5px rgb(0, 0, 0);
+      }
+
+      #about-text {
+        width: 50%;
+        overflow: hidden;
+        display: inline-block;
+        border-right: 1px solid #000;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: 4px;
+        animation: about-txt 3.6s steps(40, end);
+      }
+      @keyframes about-txt {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 50%;
+        }
+      }
+
+      section {
+        padding: 40px;
+        text-align: center;
+      }
+
+      #e-waste {
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        position: absolute;
+        top: 18%;
+        left: 10%;
+      }
+
+      nav {
+        background-color: rgba(40, 39, 39, 0.509);
+        padding: 10px;
+        position: sticky;
+        top: 0%;
+        z-index: 1;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      nav ul li {
+        display: inline;
+      }
+
+      nav ul li a {
+        color: #fff;
+        display: inline-block;
+        padding: 10px;
+        text-decoration: none;
+      }
+
+      .nav-class {
+        margin-left: 20px;
+      }
+
+      .nav-class a:hover {
+        text-decoration: underline;
+        color: white;
+        font-weight: bold;
+        background-color: #02356cc1;
+        padding: 8px 12px;
+        border-radius: 10px;
+      }
+
+      footer {
+        background-color: #032548ae;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-content p {
+        margin-bottom: 10px;
+      }
+
+      .social-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .social-links li {
+        display: inline-block;
+        margin: 0 5px;
+      }
+
+      .social-links a {
+        color: #fff;
+        font-size: 20px;
+      }
+
+      .social-links a:hover {
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body onload="n2()">
+    {% include 'nav.html' %}
+
+    <section class="mt-5" id="">
+      <h2>
+        <b
+          style="
+            color: #002a54ef;
+            text-shadow: 1px 1px 3px lightblue;
+            text-decoration: underline;
+          "
+          >About</b
+        >
+      </h2>
+
+      <main>
+        <section>
+            <h2>Our Mission</h2>
+            <p>At e-wastex , our mission is to provide a sustainable solution for managing electronic waste (e-waste). We aim to create a platform where individuals and businesses can easily buy and sell various types of e-waste, contributing to environmental conservation and resource preservation.</p>
+        </section>
+
+        <section>
+            <h2>Our Vision</h2>
+            <p>We envision a future where electronic waste is efficiently recycled, repurposed, or reused to minimize its impact on the environment. By promoting the circular economy principles, we strive to make a positive difference in reducing electronic waste and fostering a more sustainable world for future generations.</p>
+        </section>
+
+        <section>
+            <h2>Why Choose Us?</h2>
+            <p>Choosing e-wastex for your e-waste management needs offers several benefits:</p>
+            <ol>
+                <li><strong>Environmental Impact:</strong> By participating in our platform, you're actively contributing to reducing electronic waste and minimizing its environmental footprint.</li>
+                <li><strong>Convenience:</strong> Our user-friendly interface makes it easy to buy and sell e-waste items, providing a hassle-free experience for our users.</li>
+                <li><strong>Community Engagement:</strong> Join our community of environmentally conscious individuals and businesses dedicated to making a positive impact on the planet.</li>
+                <li><strong>Innovation:</strong> We're committed to continuously improving our platform and exploring innovative solutions for e-waste management.</li>
+            </0l>
+        </section>
+    </main>
+    <br /><br />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
