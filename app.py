@@ -1,45 +1,35 @@
-from flask import Flask, render_template , jsonify
+from flask import Flask, render_template, jsonify
+import os
+from supabase import Client
 
 app = Flask(__name__)
 
-parts = [
-  {
-    'id': 1,
-    'name': 'CPU',
-    'price': "Rs 1000",
-    'quant': 1,
-    'image': 'static/cpu.jpg'
-  },
-  {
-    'id': 2,
-    'name': 'GPU',
-    'price': "Rs 2000",
-    'quant' : 1,
-    'image': 'static/gpu.jpg'
-  },
-  {
-    'id': 3,
-    'name': 'RAM',
-    'price': "Rs 1000",
-    'quant': 1,
-    'image': 'static/ram.jpg'
-  },
-  {
-    'id': 4,
-    'name': 'SSD',
-    'price': "Rs 3000",
-    'quant': 1,
-    'image': 'static/ssd.jpg'
-  }
-]
+url = os.environ.get("SUPABASE_URL", "")
+key = os.environ.get("SUPABASE_KEY", "")
+supabase = Client(url, key)
 
 @app.route("/")
 def hello_ewastex():
-    return render_template("home.html",Parts=parts)
+    parts = fetch_parts()
+    return render_template("home.html", Parts=parts)
 
 @app.route("/api/parts")
 def list_parts():
+    parts = fetch_parts()
     return jsonify(parts)
 
+def fetch_parts():
+    parts_data = supabase.from_("parts").select("*").execute().data
+    parts_set = []
+    for part in parts_data:
+        parts_set.append({
+            'id': part['id'],
+            'name': part['name'],
+            'price': "Rs " + str(part['price']),
+            'quant': part['quant'],
+            'image': part['image']
+        })
+    return parts_set
+
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',debug=True)
+    app.run(host='0.0.0.0', debug=True)

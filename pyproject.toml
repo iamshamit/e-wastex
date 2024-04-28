@@ -9,6 +9,7 @@ packages = [{include = "repl_nix_e_wastex"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 flask = "^3.0.3"
+supabase = "^2.4.3"
 
 
 [build-system]
